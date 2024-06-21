@@ -6,7 +6,7 @@ pipeline
     }
 
     parameters {
-        string defaultValues: 'rishu', name: 'LASTNAME'
+        string defaultValue: 'rishu', name: 'LASTNAME'
     }
 
     environment{
