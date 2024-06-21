@@ -1,14 +1,12 @@
 pipeline
 {
 
-    agent { 
-        label 'DevServer' 
-        }
+    agent any
     stages{
         stage('build')
         {
             steps{
-                echo "This is build stage"
+                echo "This is built stage"
             }
         }
 
