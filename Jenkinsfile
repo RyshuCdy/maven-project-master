@@ -22,7 +22,7 @@ pipeline
         {
             steps{
                 sh 'mvn clean package'
-                echo "Hello $NAME $(params.LASTNAME)"
+                echo "Hello $NAME ${params.LASTNAME}"
             }
 
             post {
