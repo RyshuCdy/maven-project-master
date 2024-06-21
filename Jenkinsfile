@@ -24,7 +24,7 @@ pipeline
                 sh 'mvn clean package'
                 echo "Hello $NAME ${params.LASTNAME}"
             }
-
+        }
     
 
             stage('test')
@@ -49,7 +49,7 @@ pipeline
                 }
             }
             }
-        }
+        
 
     }
 
