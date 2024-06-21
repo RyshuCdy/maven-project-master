@@ -36,7 +36,7 @@ pipeline
                         echo "This is test A"
                     }
                 }
-                stage('testS')
+                stage('test')
                 {
                     steps{
                         echo "This is test B"
