@@ -15,28 +15,45 @@
   <name>Webapp</name>
   <description>Webapp.</description>
 
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source> <!-- Set to Java 17 -->
+    <maven.compiler.target>17</maven.compiler.target> <!-- Set to Java 17 -->
+    <jetty.version>9.4.43.v20210629</jetty.version> <!-- Example version for Jetty -->
+  </properties>
+
   <build>
     <finalName>${project.artifactId}</finalName>
 
     <plugins>
       <plugin>
-        <groupId>org.mortbay.jetty</groupId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
+        <version>${jetty.version}</version>
       </plugin>
     </plugins>
   </build>
 
   <dependencies>
-
     <dependency>
       <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>javax.servlet.jsp</groupId>
-      <artifactId>jsp-api</artifactId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>2.3.3</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
