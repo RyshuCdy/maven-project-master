@@ -25,10 +25,29 @@ pipeline
                 echo "Hello $NAME ${params.LASTNAME}"
             }
 
-            post {
+    
+
+            stage('test')
+            {
+               parallel {
+                stage('testA')
+                {
+                    steps{
+                        echo "This is test A"
+                    }
+                }
+                stage('testS')
+                {
+                    steps{
+                        echo "This is test B"
+                    }
+                }
+               }
+                post {
                 success{
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
+            }
             }
         }
 
